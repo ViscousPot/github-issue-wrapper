@@ -1,9 +1,10 @@
+import React from "react";
 import { Report } from './pages/Report'
 import { Edit } from './pages/Edit'
 import { useSearchParams } from 'react-router-dom';
 import { Data } from './types';
 import * as JSURL from "jsurl2"
-import { CLIENT_ID, CLIENT_SECRET, REDIRECT_URI } from './constants';
+import { CLIENT_ID, REDIRECT_URI } from './constants';
 
 export function App() {
   const [searchParams] = useSearchParams();
@@ -26,7 +27,7 @@ export function App() {
         },
         body: new URLSearchParams({
           client_id: CLIENT_ID,
-          client_secret: CLIENT_SECRET,
+          client_secret: "test",
           code,
           redirect_uri: REDIRECT_URI,
         }),

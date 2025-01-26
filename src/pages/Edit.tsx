@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { Data } from "../types";
 import * as JSURL from "jsurl2"
@@ -39,7 +39,7 @@ export const Edit = ({ editData }: Props) => {
         <div
             className="flex h-screen w-screen flex-col items-center justify-start gap-8 overflow-y-scroll px-6 py-8 sm:px-8 sm:py-32"
         >
-            <h1 className="mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl">Issue Wrapper</h1>
+            <h1 className="dark:text-white mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">Issue Wrapper</h1>
             {
                 (appIconUrl !== "")
                     ? <img
@@ -51,7 +51,7 @@ export const Edit = ({ editData }: Props) => {
                     : null
             }
             <div className="w-full sm:w-1/2">
-                <label htmlFor="iconSelect" className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+                <label htmlFor="iconSelect" className="dark:text-white mb-2 block text-sm font-medium text-gray-900">
                     Application Icon URL (optional)
                 </label>
                 <input
@@ -62,11 +62,11 @@ export const Edit = ({ editData }: Props) => {
                     }}
                     defaultValue={appIconUrl}
                     placeholder="https://raw.githubusercontent.com/username/repository/master/icon.png"
-                    className="block w-full rounded-lg border border-zinc-300 bg-zinc-50 p-2.5 text-sm text-zinc-900 focus:border-blue-500 focus:ring-blue-500 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:placeholder-zinc-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    className="dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:placeholder-zinc-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 block w-full rounded-lg border border-zinc-300 bg-zinc-50 p-2.5 text-sm text-zinc-900 focus:border-blue-500 focus:ring-blue-500"
                 />
             </div>
             <div className="w-full sm:w-1/2">
-                <label htmlFor="appName" className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+                <label htmlFor="appName" className="dark:text-white mb-2 block text-sm font-medium text-gray-900">
                     Application Name
                 </label>
                 <input
@@ -74,11 +74,11 @@ export const Edit = ({ editData }: Props) => {
                     onChange={() => setErrorOccurred(false)}
                     ref={appNameRef}
                     placeholder="GitHubIssueWrapper"
-                    className="block w-full rounded-lg border border-zinc-300 bg-zinc-50 p-2.5 text-sm text-zinc-900 focus:border-blue-500 focus:ring-blue-500 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:placeholder-zinc-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    className="dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:placeholder-zinc-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 block w-full rounded-lg border border-zinc-300 bg-zinc-50 p-2.5 text-sm text-zinc-900 focus:border-blue-500 focus:ring-blue-500"
                 />
             </div>
             <div className="w-full sm:w-1/2">
-                <label htmlFor="url" className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+                <label htmlFor="url" className="dark:text-white mb-2 block text-sm font-medium text-gray-900">
                     GitHub Repository
                 </label>
                 <input
@@ -86,16 +86,16 @@ export const Edit = ({ editData }: Props) => {
                     ref={repoPathRef}
                     onChange={() => setErrorOccurred(false)}
                     placeholder="username/repository"
-                    className="block w-full rounded-lg border border-zinc-300 bg-zinc-50 p-2.5 text-sm text-zinc-900 focus:border-blue-500 focus:ring-blue-500 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:placeholder-zinc-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    className="dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:placeholder-zinc-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 block w-full rounded-lg border border-zinc-300 bg-zinc-50 p-2.5 text-sm text-zinc-900 focus:border-blue-500 focus:ring-blue-500"
                 />
             </div>
             <div className="w-full sm:w-1/2">
-                <label htmlFor="url" className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+                <label htmlFor="url" className="dark:text-white mb-2 block text-sm font-medium text-gray-900">
                     Questions (optional)
                 </label>
                 <button
                     onClick={() => setQuestions((prev) => prev.concat([""]))}
-                    className="mb-4 w-full rounded-lg bg-emerald-700 px-5 py-2.5 text-sm font-bold text-white hover:bg-emerald-800 focus:outline-none focus:ring-4 focus:ring-emerald-300 dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800"
+                    className="dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800 mb-4 w-full rounded-lg bg-emerald-700 px-5 py-2.5 text-sm font-bold text-white hover:bg-emerald-800 focus:outline-none focus:ring-4 focus:ring-emerald-300"
                 >+ Add</button>
                 {questions.map((question, index) => (
                     <div
@@ -113,11 +113,11 @@ export const Edit = ({ editData }: Props) => {
                                 })
                             }}
                             placeholder="What happened?"
-                            className="block w-full rounded-lg border border-zinc-300 bg-zinc-50 p-2.5 text-sm text-zinc-900 focus:border-blue-500 focus:ring-blue-500 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:placeholder-zinc-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                            className="dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:placeholder-zinc-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 block w-full rounded-lg border border-zinc-300 bg-zinc-50 p-2.5 text-sm text-zinc-900 focus:border-blue-500 focus:ring-blue-500"
                         />
                         <button
                             onClick={() => setQuestions((prev) => prev.slice(0, index).concat(index < prev.length - 1 ? prev[index + 1] : []))}
-                            className="rounded-lg bg-rose-700 px-5 py-2.5 text-sm font-bold text-white hover:bg-rose-800 focus:outline-none focus:ring-4 focus:ring-rose-300 dark:border-rose-600 dark:bg-rose-600 dark:hover:bg-rose-700 dark:focus:ring-rose-800"
+                            className="dark:border-rose-600 dark:bg-rose-600 dark:hover:bg-rose-700 dark:focus:ring-rose-800 rounded-lg bg-rose-700 px-5 py-2.5 text-sm font-bold text-white hover:bg-rose-800 focus:outline-none focus:ring-4 focus:ring-rose-300"
                         >-</button>
                     </div>
                 ))}
@@ -125,7 +125,7 @@ export const Edit = ({ editData }: Props) => {
 
             {errorOccurred ? <p className="font-bold text-rose-300">Please make sure you have filled out all provided fields.</p> : null}
             <button
-                className="mb-8 me-2 mt-4 rounded-lg bg-emerald-700 px-5 py-2.5 text-sm font-bold text-white hover:bg-emerald-800 focus:outline-none focus:ring-4 focus:ring-emerald-300 dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800"
+                className="dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800 mb-8 me-2 mt-4 rounded-lg bg-emerald-700 px-5 py-2.5 text-sm font-bold text-white hover:bg-emerald-800 focus:outline-none focus:ring-4 focus:ring-emerald-300"
                 onClick={() => {
                     if (appNameRef.current == undefined || repoPathRef.current == undefined) {
                         setErrorOccurred(true);
