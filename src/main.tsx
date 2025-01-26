@@ -10,7 +10,7 @@ import {
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/github-issue-wrapper'>
       <Routes>
         <Route path="/" Component={App} />
       </Routes>
