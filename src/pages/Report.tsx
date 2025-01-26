@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { useSearchParams } from "react-router-dom";
 import { Data } from "../types";
 import { CLIENT_ID, REDIRECT_URI } from "../constants";

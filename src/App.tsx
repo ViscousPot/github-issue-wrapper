@@ -1,4 +1,3 @@
-import React from "react";
 import { Report } from './pages/Report'
 import { Edit } from './pages/Edit'
 import { useSearchParams } from 'react-router-dom';
