@@ -26,6 +26,7 @@ Issue Wrapper enables developers to create a custom issue-reporting link for the
   - Generate a custom issue-reporting link for your app.
   - Navigate the user to the link when a bug needs to be reported
     - Optionally include logs that will be included at the bottom of your report
+    - _(It's recommended to cap a generated URL to 2048 characters in length to maintain compatiblity)_
 
 #### User Experience
   - Users are taken to the generated link and authenticate if required.
