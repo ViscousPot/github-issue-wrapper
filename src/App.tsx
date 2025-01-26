@@ -26,7 +26,7 @@ export function App() {
         },
         body: new URLSearchParams({
           client_id: CLIENT_ID,
-          client_secret: "test",
+          client_secret: import.meta.env.VITE_CLIENT_SECRET,
           code,
           redirect_uri: REDIRECT_URI,
         }),
