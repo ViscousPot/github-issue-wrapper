@@ -35,7 +35,7 @@ export function App() {
 
       const data = await response.json();
       localStorage.setItem('gitHub_access_token', data.access_token);
-      window.open("https://github.com/apps/issue-wrapper/installations/new", "_self")
+      window.location.href = "https://github.com/apps/issue-wrapper/installations/new", "_self"
     }
 
     asyncSaveAuth()
