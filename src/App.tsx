@@ -18,26 +18,10 @@ export function App() {
 
   if (code != null) {
     const asyncSaveAuth = async () => {
-      const response = await fetch(`access_token/${code}`)
-      //   method: 'POST',
-      //   headers: {
-      //     'Accept': 'application/json',
-      //   },
-      //   body: new URLSearchParams({
-      //     client_id: CLIENT_ID,
-      //     client_secret: import.meta.env.VITE_CLIENT_SECRET,
-      //     code,
-      //     redirect_uri: REDIRECT_URI,
-      //   }),
-      // });
+      const response = await fetch(`/access_token/${code}`)
 
-
-      // const data = await response.json();
-
-      console.log(response)
-      console.log(response.json())
-      // localStorage.setItem('gitHub_access_token', data.access_token);
-      // window.location.href = "https://github.com/apps/issue-wrapper/installations/new", "_self"
+      localStorage.setItem('gitHub_access_token', response.toString());
+      window.location.href = "https://github.com/apps/issue-wrapper/installations/new", "_self"
     }
 
     asyncSaveAuth()
