@@ -14,7 +14,7 @@ export default async (req: Request, context: Context) => {
     },
     body: new URLSearchParams({
       client_id: CLIENT_ID,
-      client_secret: "",
+      client_secret,
       code,
       redirect_uri: REDIRECT_URI,
     }),
