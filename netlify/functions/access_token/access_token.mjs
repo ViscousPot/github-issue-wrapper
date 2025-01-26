@@ -1,7 +1,6 @@
-import type { Config, Context } from "@netlify/functions";
 import { CLIENT_ID, REDIRECT_URI } from '../../../src/constants';
 
-export default async (req: Request, context: Context) => {
+export default async (req, context) => {
   const client_secret = Netlify.env.get("VITE_CLIENT_SECRET");
 
   const { code } = context.params;
@@ -33,6 +32,6 @@ export default async (req: Request, context: Context) => {
   return new Response(data.access_token)
 }
 
-export const config: Config = {
+export const config = {
   path: "/access_token/:code"
 };
