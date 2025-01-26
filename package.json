@@ -32,7 +32,6 @@
     "vite": "^6.0.5"
   },
   "main": "index.js",
-  "homepage": "https://viscouspot.github.io/github-issue-wrapper/",
   "repository": "https://github.com/ViscousPot/github-issue-wrapper.git",
   "author": "ViscousPot <viscouspotential@gmail.com>",
   "license": "MIT"
