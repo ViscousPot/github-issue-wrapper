@@ -3,7 +3,6 @@ import { Edit } from './pages/Edit'
 import { useSearchParams } from 'react-router-dom';
 import { Data } from './types';
 import * as JSURL from "jsurl2"
-import { CLIENT_ID, REDIRECT_URI } from './constants';
 
 export function App() {
   const [searchParams] = useSearchParams();
