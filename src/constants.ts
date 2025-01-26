@@ -1,4 +1,4 @@
 
 
 export const CLIENT_ID = "Iv23lilRcPa61LZU1Py0"
-export const REDIRECT_URI = "https://viscouspot.github.io/github-issue-wrapper/"
+export const REDIRECT_URI = "https://issue-wrapper.netlify.app/"
