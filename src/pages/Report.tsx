@@ -46,12 +46,16 @@ export const Report = ({ data }: Props) => {
         <div
             className="flex h-screen w-screen flex-col items-center justify-start gap-8 overflow-y-scroll px-6 py-8 sm:px-8 sm:py-32"
         >
-            <img
-                id="previewImage"
-                className="border-1/4 mb-2 block w-32 rounded-lg p-1"
-                alt="Selected Preview"
-                src={data?.appIconUrl}
-            />
+            {
+                data?.appIconUrl
+                    ? <img
+                        id="previewImage"
+                        className="border-1/4 mb-2 block w-32 rounded-lg p-1"
+                        alt="Selected Preview"
+                        src={data?.appIconUrl}
+                    />
+                    : null
+            }
             <p className="dark:text-white mb-4 text-center text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">Report an issue with {data?.appName}</p>
 
             {authToken
