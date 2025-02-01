@@ -15,10 +15,25 @@ export const Report = ({ data }: Props) => {
     const [searchParams] = useSearchParams();
     const [errorOccurred, setErrorOccurred] = useState(false);
 
-    // const code = searchParams.get("code") ?? "";
+    const onFocus = async () => {
+        const token = localStorage.getItem('gitHub_access_token') ?? ""
+        setAuthToken(token)
+        if (!token) return
 
-    const onFocus = () => {
-        setAuthToken(localStorage.getItem('gitHub_access_token') ?? "")
+        try {
+            const response = await fetch("https://api.github.com/user", {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+
+            if (!response.ok) {
+                throw new Error("Invalid token");
+            }
+        } catch (error) {
+            localStorage.removeItem("gitHub_access_token");
+            setAuthToken("");
+        }
     };
 
     useEffect(() => {
