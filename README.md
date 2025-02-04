@@ -15,7 +15,7 @@ Issue Wrapper enables developers to create a custom issue-reporting link for the
 
 ## Get Started
 
-**Visit [Issue Wrapper](https://issue-wrapper.netlify.app)**
+**Visit [Issue Wrapper](https://issue-wrapper.viscouspotenti.al)**
 
 1. Integrate Issue Wrapper with your application.
 2. Customize the reporting link and form settings.
