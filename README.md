@@ -27,8 +27,8 @@ Issue Wrapper enables developers to create a custom issue-reporting link for the
   - Define the form fields/questions
   - Generate a custom issue-reporting link for your app.
   - Navigate the user to the link when a bug needs to be reported
-    - The generated link will look like this: `https://issue-wrapper.netlify.app/?q=....`
-    - If you need to make edits to the link, replace `q` with `e` to form `https://issue-wrapper.netlify.app/?e=....`
+    - The generated link will look like this: `https://issue-wrapper.viscouspotenti.al/?q=....`
+    - If you need to make edits to the link, replace `q` with `e` to form `https://issue-wrapper.viscouspotenti.al/?e=....`
     - Optionally include logs that will be included at the bottom of your report
     - _(It's recommended to cap a generated URL to 2048 characters in length to maintain compatiblity)_
 
