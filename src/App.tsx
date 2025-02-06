@@ -19,12 +19,24 @@ export function App() {
 
   useEffect(() => {
     if (code) {
-      console.log("test1")
       const asyncSaveAuth = async () => {
         const response = await fetch(`/access_token/${code}`)
+        const accessToken = await response.text()
+        localStorage.setItem('gitHub_access_token', accessToken);
 
-        localStorage.setItem('gitHub_access_token', await response.text());
-        window.location.href = "https://github.com/apps/issue-wrapper/installations/new", "_self"
+        const installationResponse = await fetch("https://api.github.com/user/installations", {
+          headers: { Authorization: `token ${accessToken}` }
+        });
+
+        const installations = await installationResponse.json();
+
+        if (installations.total_count === 0 || !installations.installations.some((installation: { app_id: string }) => installation.app_id == "1123503")) {
+          window.location.href = "https://github.com/apps/issue-wrapper/installations/new";
+          return;
+        }
+
+        window.open("about:blank", "_self");
+        window.close();
       }
 
       asyncSaveAuth()
